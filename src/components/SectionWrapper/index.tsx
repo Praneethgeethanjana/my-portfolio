@@ -1,4 +1,4 @@
-import { ReactNode } from "react";
+import {ReactNode} from "react";
 
 interface SectionWrapperProps {
     id: string; // To enable smooth scrolling or navigation
@@ -6,7 +6,7 @@ interface SectionWrapperProps {
     children: ReactNode; // Content inside the section
 }
 
-export default function SectionWrapper({ id, title, children }: SectionWrapperProps) {
+export default function SectionWrapper({id, title, children}: SectionWrapperProps) {
     return (
         <section id={id} className="py-16 bg-gray-50 dark:bg-gray-900">
             <div className="container mx-auto px-4">
