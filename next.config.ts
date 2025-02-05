@@ -9,7 +9,7 @@ const nextConfig: NextConfig = {
     // experimental: {
     //     turbo: false,
     // },
-    output: "export"
+    // output: "export"
 }
 
 export default nextConfig
