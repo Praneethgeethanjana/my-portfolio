@@ -4,10 +4,13 @@ import Link from "next/link";
 import {useEffect, useState} from "react";
 
 export default function Header() {
+    // const [theme, setTheme] = useState<string>(
+    //     typeof window !== "undefined" && localStorage.theme
+    //         ? localStorage.theme
+    //         : "light"
+    // );
     const [theme, setTheme] = useState<string>(
-        typeof window !== "undefined" && localStorage.theme
-            ? localStorage.theme
-            : "light"
+        "dark"
     );
 
     useEffect(() => {
@@ -52,13 +55,13 @@ export default function Header() {
                 </nav>
 
                 {/* Theme Toggle Button */}
-                <button
-                    onClick={toggleTheme}
-                    className="p-2 rounded-full absolute right-10 bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 transition duration-300"
-                    aria-label="Toggle Theme"
-                >
-                    {theme === "dark" ? "🌞" : "🌙"}
-                </button>
+                {/*<button*/}
+                {/*    onClick={toggleTheme}*/}
+                {/*    className="p-2 rounded-full absolute right-10 bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 transition duration-300"*/}
+                {/*    aria-label="Toggle Theme"*/}
+                {/*>*/}
+                {/*    {theme === "dark" ? "🌞" : "🌙"}*/}
+                {/*</button>*/}
             </div>
         </header>
     );

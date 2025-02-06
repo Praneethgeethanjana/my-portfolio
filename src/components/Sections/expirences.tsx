@@ -35,10 +35,9 @@ export default function Experiences() {
             company: "Ceyentra Technologies (Pvt) Ltd",
             duration: "October 2024 - Present",
             responsibilities: [
-                "Developed scalable full-stack applications using React, Node.js, and PostgreSQL",
-                "Collaborated with cross-functional teams to implement new features and resolve bugs",
-                "Optimized app performance and reduced loading time by refactoring components and state management",
-                "Led code reviews and mentored junior developers"
+                "Frontend Developer of Alpha Accounting Project using React.js with Yup Validation and Reactstrap.",
+                "Lead Frontend Developer of Apartner Project (Web & Mobile) using React.js, React Native, and JavaScript.",
+                "Frontend Developer for Cen Group Planner Admin Panel using React.js with JavaScript & Reactstrap.",
             ]
         },
         {
@@ -46,9 +45,10 @@ export default function Experiences() {
             company: "Ceyentra Technologies (Pvt) Ltd",
             duration: "July 2022 - August 2024",
             responsibilities: [
-                "Assisted in building user interfaces using React and TypeScript",
-                "Improved UI responsiveness and mobile optimization",
-                "Worked closely with UX/UI designers to implement new designs"
+                "Frontend developer for Unicloud360 Student Management System using React JS.",
+                "THe Developer of Unicloud360 public static website using Gatsby JS",
+                "Mobile Developer of the Sri Delivery food ordering app using React Native and JavaScript",
+                "Developer of the company website using HTML, CSS, and JavaScript.",
             ]
         },
         {
@@ -56,9 +56,9 @@ export default function Experiences() {
             company: "Ceyentra Technologies (Pvt) Ltd",
             duration: "January 2022 - July 2022",
             responsibilities: [
-                "Assisted in building user interfaces using React and TypeScript",
-                "Improved UI responsiveness and mobile optimization",
-                "Worked closely with UX/UI designers to implement new designs"
+                "Frontend Developer for Edulab Learning Platform using React.js and JavaScript.",
+                "Lead Frontend Developer for Karuna.lk Donation Platform using React.js, JavaScript, and Bootstrap.",
+                "Developed the login system for the WD40 commercial game using Construct 3."
             ]
         }
         // Add more job experiences here as needed

@@ -157,7 +157,7 @@ export default function AboutMe() {
     return (
         <SectionWrapper id="about-me" title="About Me">
             {/*// <section id="about-me" className="bg-white dark:text-white py-16 px-6">*/}
-            <div className="container mx-auto  text-center md:text-left">
+            <div className="container mx-auto   text-center md:text-left">
                 {/* Section Title */}
                 {/*<motion.h2*/}
                 {/*    initial={{opacity: 0, y: 30}}*/}
@@ -184,36 +184,38 @@ export default function AboutMe() {
                 </motion.p>
 
                 {/* Skills Overview */}
-                <motion.div className="flex justify-between">
-                    <motion.div
-                        initial={{opacity: 0, y: 30}}
-                        animate={{opacity: 1, y: 0}}
-                        transition={{duration: 1.5, delay: 0.4}}
-                        className="mt-6 text-lg"
-                    >
-                        <h3 className="text-lg text-gray-700 dark:text-gray-100 font-semibold mb-4">What I Do</h3>
-                        <ul className="list-disc list-inside text-gray-800 dark:text-gray-300 space-y-2">
-                            <p>🔹 Building dynamic, interactive React.js applications</p>
-                            <p>🔹 Creating high-performance, responsive web UIs</p>
-                            <p>🔹 Implementing Redux & State Management</p>
-                            <p>🔹 Working with Next.js for server-side rendering & SEO</p>
-                            <p>🔹 Integrating APIs & handling front-end logic efficiently</p>
-                        </ul>
-                    </motion.div>
+                <motion.div className="d-flex justify-content-center">
+                    <div>
+                        <motion.div
+                            initial={{opacity: 0, y: 30}}
+                            animate={{opacity: 1, y: 0}}
+                            transition={{duration: 1.5, delay: 0.4}}
+                            className="mt-6 text-lg"
+                        >
+                            <h3 className="text-lg text-gray-700 dark:text-gray-100 font-semibold mb-4">What I Do</h3>
+                            <ul className="list-disc list-inside text-gray-800 dark:text-gray-300 space-y-2">
+                                <p>🔹 Building dynamic, interactive React.js applications</p>
+                                <p>🔹 Creating high-performance, responsive web UIs</p>
+                                <p>🔹 Implementing Redux & State Management</p>
+                                <p>🔹 Working with Next.js for server-side rendering & SEO</p>
+                                <p>🔹 Integrating APIs & handling front-end logic efficiently</p>
+                            </ul>
+                        </motion.div>
 
-                    {/* Education */}
-                    <motion.div
-                        initial={{opacity: 0, y: 30}}
-                        animate={{opacity: 1, y: 0}}
-                        transition={{duration: 1.5, delay: 0.6}}
-                        className="mt-8 text-lg text-gray-300"
-                    >
-                        <h3 className="text-lg text-gray-700 dark:text-gray-100 font-semibold mb-4">Education</h3>
-                        <ul className="list-disc list-inside text-gray-800 dark:text-gray-300 space-y-2">
-                            <p>🎓 Graduate Diploma in Software Engineering (GDSE) - IJSE</p>
-                            <p>🎓 Bachelor's Degree in Software Engineering - Cardiff Metropolitan University</p>
-                        </ul>
-                    </motion.div>
+                        {/* Education */}
+                        <motion.div
+                            initial={{opacity: 0, y: 30}}
+                            animate={{opacity: 1, y: 0}}
+                            transition={{duration: 1.5, delay: 0.6}}
+                            className="mt-8 text-lg text-gray-300"
+                        >
+                            <h3 className="text-lg text-gray-700 dark:text-gray-100 font-semibold mb-4">Education</h3>
+                            <ul className="list-disc list-inside text-gray-800 dark:text-gray-300 space-y-2">
+                                <p>🎓 Graduate Diploma in Software Engineering (GDSE) - IJSE</p>
+                                <p>🎓 Bachelor's Degree in Software Engineering - Cardiff Metropolitan University</p>
+                            </ul>
+                        </motion.div>
+                    </div>
                 </motion.div>
             </div>
             {/*</section>*/}
