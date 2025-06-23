@@ -7,6 +7,8 @@ interface SectionWrapperProps {
 }
 
 export default function SectionWrapper({id, title, children}: SectionWrapperProps) {
+
+    
     return (
         <section id={id} className="py-16 bg-gray-50 dark:bg-gray-900">
             <div className="container mx-auto px-4 lg:px-20">
