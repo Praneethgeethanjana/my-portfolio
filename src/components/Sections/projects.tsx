@@ -131,7 +131,7 @@
 
 import SectionWrapper from "@/components/SectionWrapper";
 import {motion} from "framer-motion";
-import {useState} from "react";
+import {useEffect, useState} from "react";
 
 // Define the Project type
 type Project = {
@@ -145,6 +145,15 @@ type Project = {
 
 export default function FeaturedProjects() {
     const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+
+    useEffect(() => {
+        if (selectedProject) {
+            document.body.style.overflow = "hidden";
+        } else {
+            document.body.style.overflow = "";
+        }
+    }, [selectedProject]);
+
 
     const projects: Project[] = [
         {
@@ -227,22 +236,36 @@ export default function FeaturedProjects() {
             </div>
 
             {/* Modal for Detailed View */}
+            {/* Modal for Detailed View */}
             {selectedProject && (
-                <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
-                    <div className="bg-white dark:bg-gray-800 rounded-lg p-6 w-11/12 max-w-2xl shadow-lg relative">
+                <motion.div
+                    initial={{opacity: 0}}
+                    animate={{opacity: 1}}
+                    exit={{opacity: 0}}
+                    className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/60 px-4"
+                    onClick={() => setSelectedProject(null)} // close when click outside modal
+                >
+                    <motion.div
+                        initial={{scale: 0.9, opacity: 0}}
+                        animate={{scale: 1, opacity: 1}}
+                        exit={{scale: 0.9, opacity: 0}}
+                        onClick={(e) => e.stopPropagation()} // prevent close on modal content click
+                        className="relative w-full max-w-2xl bg-white dark:bg-gray-900 rounded-xl shadow-lg p-6"
+                    >
                         <button
                             onClick={() => setSelectedProject(null)}
-                            className="absolute top-3 right-3 text-gray-500 dark:text-gray-300 hover:text-red-500"
+                            className="absolute top-3 right-3 text-gray-500 dark:text-gray-300 hover:text-red-500 text-xl"
+                            aria-label="Close modal"
                         >
-                            Close
+                            ✕
                         </button>
-                        <h2 className="font-bold text-2xl text-gray-900 dark:text-white mb-4">
+                        <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-3">
                             {selectedProject.name}
                         </h2>
-                        <p className="text-gray-700 dark:text-gray-300 mb-4">
+                        <p className="text-gray-700 dark:text-gray-300 mb-3">
                             {selectedProject.description}
                         </p>
-                        <p className="text-gray-700 dark:text-gray-300 mb-4">
+                        <p className="text-gray-700 dark:text-gray-300 mb-2">
                             <strong>Role:</strong> {selectedProject.role}
                         </p>
                         <p className="text-gray-700 dark:text-gray-300 mb-4">
@@ -254,21 +277,22 @@ export default function FeaturedProjects() {
                                     key={techIndex}
                                     className="px-3 py-1 bg-gray-200 dark:bg-gray-700 text-sm rounded-full"
                                 >
-                  {tech}
-                </span>
+            {tech}
+          </span>
                             ))}
                         </div>
                         <a
                             href={selectedProject.link}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="inline-block px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600"
+                            className="inline-block px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 transition"
                         >
                             Visit Project
                         </a>
-                    </div>
-                </div>
+                    </motion.div>
+                </motion.div>
             )}
+
         </SectionWrapper>
     );
 }
