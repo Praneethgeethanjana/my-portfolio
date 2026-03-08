@@ -1,0 +1,5 @@
+[build]
+command = ". $NVM_DIR/nvm.sh && nvm install $NODE_VERSION && npm run build"
+
+[build.environment]
+NODE_VERSION = "20.9.0"
