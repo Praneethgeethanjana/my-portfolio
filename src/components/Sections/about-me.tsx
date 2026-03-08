@@ -1,224 +1,134 @@
-// "use client";
-// import Image from "next/image";
-// import {motion} from "framer-motion"; // To handle animations
-//
-// export default function AboutMe() {
-//     return (
-//         <div
-//             className="relative bg-cover bg-center h-screen flex items-center justify-center text-white px-6 py-12 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500">
-//             {/* Background Overlay */}
-//             <div className="absolute top-0 left-0 w-full h-full bg-black/50"></div>
-//
-//             {/* Section Content */}
-//             <div
-//                 className="relative z-10 container mx-auto flex flex-col md:flex-row items-center text-center md:text-left space-y-8 md:space-y-0 md:space-x-12">
-//                 {/* Image Section */}
-//                 <div className="md:w-1/3 mb-8 md:mb-0 flex justify-center md:justify-start">
-//                     <motion.div
-//                         initial={{opacity: 0, scale: 0.5}}
-//                         animate={{opacity: 1, scale: 1}}
-//                         transition={{duration: 1}}
-//                         className="overflow-hidden rounded-full border-4 border-white shadow-2xl"
-//                     >
-//                         <Image
-//                             src="/images/my.jpg" // Replace with your image path
-//                             alt="Praneeth"
-//                             width={400}
-//                             height={400}
-//                             className="rounded-full cursor-pointer shadow-xl transform transition duration-500 hover:scale-110"
-//                         />
-//                     </motion.div>
-//                 </div>
-//
-//                 {/* Text Section */}
-//                 <div className="md:w-2/3 px-4 space-y-6">
-//                     <motion.h2
-//                         initial={{opacity: 0, y: 50}}
-//                         animate={{opacity: 1, y: 0}}
-//                         transition={{duration: 1.5, delay: 0.2}}
-//                         className="text-4xl md:text-5xl font-bold text-gray-100"
-//                     >
-//                         Hi, I'm Praneeth!
-//                     </motion.h2>
-//
-//                     {/* Moving Text */}
-//                     <motion.p
-//                         initial={{opacity: 0, x: -200}}
-//                         animate={{opacity: 1, x: 0}}
-//                         transition={{
-//                             type: "spring",
-//                             stiffness: 100,
-//                             damping: 25,
-//                             duration: 1.5,
-//                             delay: 0.4,
-//                         }}
-//                         className="text-lg md:text-xl text-gray-200 leading-relaxed mb-6"
-//                     >
-//                         Experienced Front-End Developer with over 3 years of expertise in React.js, having successfully
-//                         delivered 10+ React.js projects and 2 React Native applications. Skilled in developing scalable,
-//                         user-friendly web applications, focusing on reusable components and performance optimization.
-//                         Proficient in Next.js and passionate about crafting responsive, visually appealing, and
-//                         accessible user interfaces. A collaborative team player who is always eager to learn and adapt
-//                         to emerging web technologies.
-//                     </motion.p>
-//
-//                     {/* Moving Button */}
-//                     <motion.a
-//                         href="#projects"
-//                         initial={{opacity: 0, scale: 0.8}}
-//                         animate={{opacity: 1, scale: 1}}
-//                         transition={{duration: 1.5, delay: 0.6}}
-//                         className="inline-block px-6 py-3 bg-opacity-5 bg-white text-white rounded-lg shadow-xl hover:bg-gradient-to-r hover:from-blue-500 hover:bg-opacity-90  hover:to-pink-500  transform transition duration-300 ease-out"
-//                     >
-//                         Check My Projects
-//                     </motion.a>
-//                 </div>
-//             </div>
-//
-//             {/* Additional Moving Text Below */}
-//             <motion.div
-//                 className="absolute bottom-10 left-0 w-full text-center"
-//                 initial={{opacity: 0, y: 50}}
-//                 animate={{opacity: 1, y: 0}}
-//                 transition={{
-//                     type: "spring",
-//                     stiffness: 150,
-//                     damping: 30,
-//                     duration: 2,
-//                     delay: 1,
-//                 }}
-//             >
-//                 <h3 className="text-xl text-gray-300 font-light">
-//                     Building the future, one line of code at a time.
-//                 </h3>
-//             </motion.div>
-//         </div>
-//     );
-// }
-
-
-// "use client";
-// import {motion} from "framer-motion";
-//
-// export default function AboutMe() {
-//     return (
-//         <section id="about" className="bg-gray-900 text-white py-16 px-6">
-//             <div className="container mx-auto max-w-4xl text-center md:text-left">
-//                 {/* Section Title */}
-//                 <motion.h2
-//                     initial={{opacity: 0, y: 30}}
-//                     animate={{opacity: 1, y: 0}}
-//                     transition={{duration: 1.2}}
-//                     className="text-4xl font-bold text-center mb-6"
-//                 >
-//                     About Me
-//                 </motion.h2>
-//
-//                 {/* Description */}
-//                 <motion.p
-//                     initial={{opacity: 0, y: 30}}
-//                     animate={{opacity: 1, y: 0}}
-//                     transition={{duration: 1.4, delay: 0.2}}
-//                     className="text-lg text-gray-300 leading-relaxed"
-//                 >
-//                     I'm a **Front-End Developer** with over 3 years of experience specializing in **React.js, Next.js,
-//                     and modern UI frameworks**.
-//                     With a passion for creating **scalable, high-performance web applications**, I've successfully
-//                     delivered **10+ React.js projects**
-//                     and **2 React Native applications**.
-//                 </motion.p>
-//
-//                 {/* Skills Overview */}
-//                 <motion.div
-//                     initial={{opacity: 0, y: 30}}
-//                     animate={{opacity: 1, y: 0}}
-//                     transition={{duration: 1.5, delay: 0.4}}
-//                     className="mt-6 text-lg"
-//                 >
-//                     <h3 className="text-xl font-semibold mb-4">What I Do</h3>
-//                     <ul className="list-disc list-inside text-gray-400 space-y-2">
-//                         <li>🔹 Building dynamic, interactive **React.js** applications</li>
-//                         <li>🔹 Creating **high-performance, responsive** web UIs</li>
-//                         <li>🔹 Implementing **Redux & State Management**</li>
-//                         <li>🔹 Working with **Next.js** for server-side rendering & SEO</li>
-//                         <li>🔹 Integrating APIs & handling front-end logic efficiently</li>
-//                     </ul>
-//                 </motion.div>
-//             </div>
-//         </section>
-//     );
-// }
-
 "use client";
-import {motion} from "framer-motion";
-import SectionWrapper from "@/components/SectionWrapper";
+
+import { motion } from "framer-motion";
+import Image from "next/image";
+import { Section } from "@/components/section-wrapper";
+import {
+    SiReact,
+    SiNextdotjs,
+    SiTypescript,
+    SiJavascript,
+    SiTailwindcss,
+    SiBootstrap,
+    SiRedux,
+    SiHtml5,
+    SiCss3
+} from "react-icons/si";
+
+const techStack = [
+    { name: "React / RN", icon: SiReact, color: "text-[#61DAFB]" },
+    { name: "Next.js", icon: SiNextdotjs, color: "text-foreground" },
+    { name: "TypeScript", icon: SiTypescript, color: "text-[#3178C6]" },
+    { name: "JavaScript", icon: SiJavascript, color: "text-[#F7DF1E]" },
+    { name: "Tailwind CSS", icon: SiTailwindcss, color: "text-[#06B6D4]" },
+    { name: "Redux", icon: SiRedux, color: "text-[#764ABC]" },
+    { name: "Bootstrap 5", icon: SiBootstrap, color: "text-[#7952B3]" },
+    { name: "HTML5", icon: SiHtml5, color: "text-[#E34F26]" },
+    { name: "CSS3 / SASS", icon: SiCss3, color: "text-[#1572B6]" },
+];
 
 export default function AboutMe() {
+    const containerVariants = {
+        hidden: { opacity: 0 },
+        visible: {
+            opacity: 1,
+            transition: { staggerChildren: 0.1 },
+        },
+    };
+
+    const itemVariants = {
+        hidden: { opacity: 0, y: 20 },
+        visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+    };
+
     return (
-        <SectionWrapper id="about-me" title="About Me">
-            {/*// <section id="about-me" className="bg-white dark:text-white py-16 px-6">*/}
-            <div className="container mx-auto   text-center md:text-left">
-                {/* Section Title */}
-                {/*<motion.h2*/}
-                {/*    initial={{opacity: 0, y: 30}}*/}
-                {/*    animate={{opacity: 1, y: 0}}*/}
-                {/*    transition={{duration: 1.2}}*/}
-                {/*    className="text-4xl font-bold text-center mb-6"*/}
-                {/*>*/}
-                {/*    About Me*/}
-                {/*</motion.h2>*/}
+        <Section id="about" className="relative">
+            <div className="absolute top-40 right-10 w-64 h-64 bg-primary/10 rounded-full mix-blend-multiply blur-3xl -z-10 dark:mix-blend-lighten pointer-events-none"></div>
 
-                {/* Description */}
-                <motion.p
-                    initial={{opacity: 0, y: 30}}
-                    animate={{opacity: 1, y: 0}}
-                    transition={{duration: 1.4, delay: 0.2}}
-                    className="text-lg text-gray-800 dark:text-gray-300 leading-relaxed"
+            <motion.div
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, margin: "-100px" }}
+                variants={containerVariants}
+                className="flex flex-col gap-4 mb-12"
+            >
+                <motion.h2 variants={itemVariants} className="text-3xl md:text-5xl font-bold tracking-tight">
+                    About <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-blue-500">Me</span>
+                </motion.h2>
+                <motion.div variants={itemVariants} className="w-20 h-1 bg-gradient-to-r from-primary to-blue-500 rounded-full" />
+            </motion.div>
+
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                {/* Bio & Details */}
+                <motion.div
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, margin: "-100px" }}
+                    variants={containerVariants}
+                    className="flex flex-col justify-center space-y-6"
                 >
-                    I'm an Experienced Front-End Developer with 3+ years of expertise in React.js. I've
-                    successfully completed 10+ React.js and 2 React Native projects, specializing in building
-                    scalable, user-friendly web applications with reusable components and performance optimization.
-                    I'm also proficient in Next.js and passionate about creating responsive, visually appealing,
-                    and accessible user interfaces. A collaborative team player, I am eager to learn and adapt to
-                    evolving web technologies.
-                </motion.p>
+                    <motion.div variants={itemVariants} className="glass-card p-8 relative overflow-hidden group">
+                        <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
-                {/* Skills Overview */}
-                <motion.div className="d-flex justify-content-center">
-                    <div>
-                        <motion.div
-                            initial={{opacity: 0, y: 30}}
-                            animate={{opacity: 1, y: 0}}
-                            transition={{duration: 1.5, delay: 0.4}}
-                            className="mt-6 text-lg"
-                        >
-                            <h3 className="text-lg text-gray-700 dark:text-gray-100 font-semibold mb-4">What I Do</h3>
-                            <ul className="list-disc list-inside text-gray-800 dark:text-gray-300 space-y-2">
-                                <p>🔹 Building dynamic, interactive React.js applications</p>
-                                <p>🔹 Creating high-performance, responsive web UIs</p>
-                                <p>🔹 Implementing Redux & State Management</p>
-                                <p>🔹 Working with Next.js for server-side rendering & SEO</p>
-                                <p>🔹 Integrating APIs & handling front-end logic efficiently</p>
-                            </ul>
-                        </motion.div>
+                        <p className="text-lg leading-relaxed text-muted-foreground relative z-10 mb-6 font-medium">
+                            Results-driven Frontend Software Engineer with 4+ years of experience designing, building, and deploying production-grade web and mobile applications.
+                        </p>
+                        <p className="text-muted-foreground relative z-10">
+                            Expert in React.js and React Native, with a portfolio spanning admin dashboards, donation platforms, conferencing apps, and cross-platform mobile apps — all shipped to live users. Based in Ambalangoda, Sri Lanka.
+                        </p>
+                    </motion.div>
 
-                        {/* Education */}
-                        <motion.div
-                            initial={{opacity: 0, y: 30}}
-                            animate={{opacity: 1, y: 0}}
-                            transition={{duration: 1.5, delay: 0.6}}
-                            className="mt-8 text-lg text-gray-300"
-                        >
-                            <h3 className="text-lg text-gray-700 dark:text-gray-100 font-semibold mb-4">Education</h3>
-                            <ul className="list-disc list-inside text-gray-800 dark:text-gray-300 space-y-2">
-                                <p>🎓 Graduate Diploma in Software Engineering (GDSE) - IJSE</p>
-                                <p>🎓 Bachelor's Degree in Software Engineering - Cardiff Metropolitan University</p>
-                            </ul>
-                        </motion.div>
+                    {/* Key Stats */}
+                    <motion.div variants={itemVariants} className="grid grid-cols-2 gap-4">
+                        <div className="glass p-6 rounded-2xl flex flex-col items-center justify-center text-center">
+                            <span className="text-4xl font-bold text-primary mb-2">4+</span>
+                            <span className="text-sm font-medium text-muted-foreground">Years Experience</span>
+                        </div>
+                        <div className="glass p-6 rounded-2xl flex flex-col items-center justify-center text-center">
+                            <span className="text-4xl font-bold text-blue-500 mb-2">15+</span>
+                            <span className="text-sm font-medium text-muted-foreground">Projects Delivered</span>
+                        </div>
+                    </motion.div>
+                </motion.div>
+
+                {/* Photo & Tech Grid */}
+                <motion.div
+                    initial={{ opacity: 0, x: 50 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true, margin: "-100px" }}
+                    transition={{ duration: 0.6, ease: "easeOut" }}
+                    className="flex flex-col gap-8"
+                >
+                    {/* Photo Placeholder */}
+                    {/* <div className="relative w-full aspect-square md:aspect-video lg:aspect-square max-w-sm mx-auto rounded-3xl overflow-hidden glass-card group">
+                        <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-blue-500/20 mix-blend-overlay z-10 group-hover:opacity-10 transition-opacity duration-500"></div>
+                        <Image
+                            src="/images/praneeth2.png"
+                            alt="Praneeth Geethanjana"
+                            fill
+                            className="object-cover transition-transform duration-500 group-hover:scale-105"
+                            priority
+                        />
+                    </div> */}
+
+                    {/* Tech Stack Grid */}
+                    <div className="glass-card p-6">
+                        <h3 className="text-lg font-semibold mb-4 text-center">Core Tech Stack</h3>
+                        <div className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-3 gap-4">
+                            {techStack.map((tech) => (
+                                <div
+                                    key={tech.name}
+                                    className="flex flex-col items-center justify-center p-3 rounded-xl hover:bg-white/10 dark:hover:bg-white/5 transition-all duration-300 group cursor-pointer"
+                                    title={tech.name}
+                                >
+                                    <tech.icon className={`h-8 w-8 mb-2 opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-all duration-300 ${tech.color}`} />
+                                    <span className="text-xs text-muted-foreground font-medium text-center w-full truncate">{tech.name}</span>
+                                </div>
+                            ))}
+                        </div>
                     </div>
                 </motion.div>
             </div>
-            {/*</section>*/}
-        </SectionWrapper>
+        </Section>
     );
 }
