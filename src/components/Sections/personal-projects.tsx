@@ -23,6 +23,33 @@ const personalProjects = [
         ]
     },
     {
+        title: "Luminous Gems & Jewellery",
+        url: "https://gems-and-jewellery.vercel.app/",
+        category: "Jewellery Showcase / Portfolio",
+        description: "A premium, fully responsive modern UI for a gems and jewellery brand. Developed efficiently using AI assistance (Google Antigravity) to ensure pixel-perfect design and clean code.",
+        tech: ["Next.js", "TypeScript", "Tailwind CSS", "Antigravity AI"],
+        highlights: [
+            "Developed using Google Antigravity AI for high-performance code",
+            "Fully responsive modern UI with premium aesthetics",
+            "Optimized for performance and SEO using Next.js"
+        ]
+    },
+    {
+        title: "Villa & Kabana Templates",
+        urls: [
+            { label: "Villa Kabana", link: "https://villa-kabana.vercel.app/" },
+            { label: "Serenity Villa", link: "https://serenityvilla.vercel.app/" }
+        ],
+        category: "Hospitality & Real Estate",
+        description: "Premium web templates for luxury villas and kabanas. Built with a focus on visual storytelling and conversion, featuring integrated inquiry systems powered by EmailJS.",
+        tech: ["Next.js", "Tailwind CSS", "EmailJS", "TypeScript"],
+        highlights: [
+            "Includes multiple design variants (Villa Kabana & Serenity Villa)",
+            "Seamless inquiry handling via direct EmailJS integration",
+            "Highly customizable, performance-optimized, and fully responsive"
+        ]
+    },
+    {
         title: "Bare Feelings",
         url: "https://barefeelings.lk",
         category: "Sexual Wellness Brand & E-commerce",
@@ -100,7 +127,7 @@ export default function PersonalProjects() {
                 variants={containerVariants}
                 className="grid grid-cols-1 lg:grid-cols-2 gap-8"
             >
-                {personalProjects.map((project, index) => (
+                {personalProjects.map((project: any, index: number) => (
                     <motion.div
                         key={index}
                         variants={itemVariants}
@@ -116,15 +143,33 @@ export default function PersonalProjects() {
                                             {project.category}
                                         </div>
                                     </div>
-                                    <a
-                                        href={project.url}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="w-12 h-12 rounded-full flex items-center justify-center bg-background/50 hover:bg-primary/20 text-muted-foreground hover:text-primary transition-all duration-300 group-hover:scale-110 shrink-0 ml-4"
-                                        aria-label={`Visit ${project.title}`}
-                                    >
-                                        <FiExternalLink className="h-5 w-5" />
-                                    </a>
+                                    <div className="flex gap-2">
+                                        {project.urls ? (
+                                            project.urls.map((u: any, i: number) => (
+                                                <a
+                                                    key={i}
+                                                    href={u.link}
+                                                    target="_blank"
+                                                    rel="noopener noreferrer"
+                                                    className="w-10 h-10 rounded-full flex items-center justify-center bg-background/50 hover:bg-primary/20 text-muted-foreground hover:text-primary transition-all duration-300 group-hover:scale-110 shrink-0 border border-border/50"
+                                                    title={u.label}
+                                                    aria-label={`Visit ${u.label}`}
+                                                >
+                                                    <FiExternalLink className="h-4 w-4" />
+                                                </a>
+                                            ))
+                                        ) : (
+                                            <a
+                                                href={project.url}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className="w-10 h-10 rounded-full flex items-center justify-center bg-background/50 hover:bg-primary/20 text-muted-foreground hover:text-primary transition-all duration-300 group-hover:scale-110 shrink-0 border border-border/50"
+                                                aria-label={`Visit ${project.title}`}
+                                            >
+                                                <FiExternalLink className="h-4 w-4" />
+                                            </a>
+                                        )}
+                                    </div>
                                 </div>
 
                                 <h3 className="text-2xl font-bold mb-3 group-hover:text-primary transition-colors">
@@ -142,7 +187,7 @@ export default function PersonalProjects() {
                                             <span>Awards & Recognition</span>
                                         </div>
                                         <ul className="space-y-2">
-                                            {project.awards.map((award, i) => (
+                                            {project.awards.map((award: string, i: number) => (
                                                 <li key={i} className="text-sm font-medium text-orange-500/90 flex items-start">
                                                     <span className="mr-2 mt-0.5">•</span>
                                                     <span>{award}</span>
@@ -156,7 +201,7 @@ export default function PersonalProjects() {
                                     <div className="mb-8">
                                         <h4 className="text-sm font-semibold text-foreground/80 mb-3 uppercase tracking-wider">Key Highlights</h4>
                                         <ul className="space-y-2">
-                                            {project.highlights.map((highlight, i) => (
+                                            {project.highlights.map((highlight: string, i: number) => (
                                                 <li key={i} className="text-muted-foreground text-sm flex flex-start">
                                                     <span className="text-primary mr-2 mt-0.5 shrink-0">{"→"}</span>
                                                     <span className="leading-snug">{highlight}</span>
@@ -168,7 +213,7 @@ export default function PersonalProjects() {
                             </div>
 
                             <div className="flex flex-wrap gap-2 mt-auto pt-6 border-t border-border/50">
-                                {project.tech.map((tech, i) => (
+                                {project.tech.map((tech: string, i: number) => (
                                     <span key={i} className="px-3 py-1 rounded-full bg-background/50 border border-border text-foreground/80 text-xs font-medium">
                                         {tech}
                                     </span>
@@ -181,3 +226,4 @@ export default function PersonalProjects() {
         </Section>
     );
 }
+
