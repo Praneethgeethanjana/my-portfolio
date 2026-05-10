@@ -5,6 +5,8 @@ import Contact from "@/components/Sections/contact";
 import Experiences from "@/components/Sections/expirences";
 import Hero from "@/components/Sections/hero";
 import PersonalProjects from "@/components/Sections/personal-projects";
+import Awards from "@/components/Sections/awards";
+
 
 export default function Home() {
     return (
@@ -12,10 +14,11 @@ export default function Home() {
             <Hero />
             <AboutMe />
             <PersonalProjects />
+            <Awards />
             <FeaturedProjects />
+
             <Skills />
             <Experiences />
-
             <Contact />
         </div>
     );
